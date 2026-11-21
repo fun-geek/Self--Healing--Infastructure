@@ -1,0 +1,31 @@
+# Secrets - never commit
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+var/.jwt_secret
+var/*.db
+var/*.db-*
+var/quarantine/
+var/logs/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.mypy_cache/
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+
+# Tooling / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

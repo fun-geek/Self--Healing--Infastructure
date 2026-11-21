@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "corpus": "sentinel-security-knowledge",
+  "files": {
+    "infrastructure/order-platform-topology.md": "62738b0736c6880ba3c4aad4250013c8e85e21e510fa478386dbde07bc49fe1b",
+    "policies/ai-usage-and-guardrails.md": "48995526ad9952e652bc5f1427dadaeb2901c52222ff451f482f9748f5191b11",
+    "policies/change-management-policy.md": "bd84671ef596e3878e9a5137be2241f739a58867d7e909b1fbc87ac85ba033ff",
+    "policies/data-classification.md": "dc830f2c061d0706de1c6a779f1a076875eb1908dcc79971627a53f13fd0e354",
+    "policies/incident-response-policy.md": "95217454b143113b4f8ac6b20dd0286228647118a084e76d3b5317f0d369d5da",
+    "policies/network-exposure-standard.md": "1ba8237772458aa1764c1928c7ddbb823b2a3ee7506f39dd69b4ffdb24def18e",
+    "runbooks/failed-validation-escalation.md": "6fa1611b1551b28f056f735d287ac2e44d8e90ae5653417906a55ffa82e65396",
+    "runbooks/quarantine-workload.md": "cad3d0119dcfea50f8a2a5006823dcf4319efbcf2d2ca0f5e7cf29ed6dd6dd33",
+    "runbooks/restore-from-baseline.md": "f18c9a730d952c47a09cc9bee7cc163253691fb9459f0fd476f66cbb749f3c32",
+    "runbooks/validate-recovery.md": "feee9320bfcee7e9ed672a502b940b1ec78cbaa05f518a6d05045efc0ea76896",
+    "security/red-team-notes.md": "86fd0eb842e118a06bd807e79b29f5f9b219b6848879bdbd4dffdd64e908812b",
+    "troubleshooting/image-digest-mismatch.md": "e164276c2f0dac01965de2ef65c7c0917d246aa7e1f431c53f9efa0bad6e48b2",
+    "troubleshooting/unauthorized-port.md": "947d1036573ebb3c6a86594ad190368a59424a5f639a61c29728e552d48df680",
+    "troubleshooting/unknown-process.md": "c0dba107e3d2866927747d855a028bb32bad845c9fb1addc26e521b8a84431b7"
+  }
+}

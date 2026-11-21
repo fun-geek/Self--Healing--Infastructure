@@ -1,0 +1,92 @@
+{
+  "as_of": "2026-11-18T12:00:00Z",
+  "note": "Ground truth for tests and demo only. Production code never reads this file.",
+  "resources": {
+    "vm-order-api-01": {
+      "classification": "compromised",
+      "expected_rules": [
+        "RULE-PORT-001",
+        "RULE-PROC-001",
+        "RULE-IMG-001",
+        "RULE-CFG-001",
+        "RULE-HLTH-001"
+      ],
+      "expected_outcome": "recovered",
+      "reason": "reverse shell port 4444, xmrig from /tmp, tampered image and config"
+    },
+    "vm-order-api-02": {
+      "classification": "decoy_untrusted_hint",
+      "expected_rules": [
+        "RULE-HINT-001"
+      ],
+      "expected_outcome": "no_action",
+      "reason": "compliant state plus untrusted threat hint and prompt injection"
+    },
+    "vm-order-db-01": {
+      "classification": "healthy",
+      "expected_rules": [],
+      "expected_outcome": "no_action",
+      "reason": "matches baseline"
+    },
+    "vm-order-cache-01": {
+      "classification": "decoy_transient_health",
+      "expected_rules": [
+        "RULE-HLTH-001"
+      ],
+      "expected_outcome": "no_action",
+      "reason": "single health blip below the 3-failure threshold"
+    },
+    "ctr-order-gateway-01": {
+      "classification": "healthy",
+      "expected_rules": [],
+      "expected_outcome": "no_action",
+      "reason": "matches baseline"
+    },
+    "ctr-order-payments-01": {
+      "classification": "compromised",
+      "expected_rules": [
+        "RULE-PORT-001",
+        "RULE-PROC-001",
+        "RULE-IMG-001",
+        "RULE-CFG-001",
+        "RULE-HLTH-001"
+      ],
+      "expected_outcome": "failed_validation_quarantined",
+      "reason": "poisoned artefact source keeps the image digest invalid after restore"
+    },
+    "ctr-order-search-01": {
+      "classification": "compromised",
+      "expected_rules": [
+        "RULE-PORT-001",
+        "RULE-PROC-001",
+        "RULE-IMG-001",
+        "RULE-CFG-001",
+        "RULE-HLTH-001"
+      ],
+      "expected_outcome": "recovered",
+      "reason": "cryptominer, high-risk port 9001 and tampered image"
+    },
+    "ctr-order-worker-02": {
+      "classification": "decoy_tag_drift",
+      "expected_rules": [
+        "RULE-IMG-002"
+      ],
+      "expected_outcome": "no_action",
+      "reason": "mutable tag differs but digest matches the approved digest"
+    },
+    "ctr-order-reports-01": {
+      "classification": "decoy_approved_change",
+      "expected_rules": [
+        "RULE-CFG-001"
+      ],
+      "expected_outcome": "no_action",
+      "reason": "config hash covered by approved change CHG-1042"
+    },
+    "ctr-order-notifications-01": {
+      "classification": "healthy",
+      "expected_rules": [],
+      "expected_outcome": "no_action",
+      "reason": "healthy and duplicate deliveries must be idempotent"
+    }
+  }
+}

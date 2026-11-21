@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "generator_version": "1.0.0",
+  "seed": 20261118,
+  "generated_at": "2026-11-18T12:00:00Z",
+  "as_of": "2026-11-18T12:00:00Z",
+  "baseline_id": "baseline-2026.11.18",
+  "baseline_version": 3,
+  "files": {
+    "approved_baseline.json": "4139397c6aef62eadbc1d54196eedfc718b408b3abe81fa8588be2bcfc099e67",
+    "infrastructure_events.json": "9ec4b98a31d5c061e21bf6a6017c0c7816058a4bca38e7be23d67074503a2b0d",
+    "action_catalogue.csv": "9fca611de269ba419e42aa58ff37d3ba34151c659c278ad50d3f4f78a22fa451"
+  }
+}

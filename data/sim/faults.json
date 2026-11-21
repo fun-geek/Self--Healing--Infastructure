@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "description": "Simulator fault injection. Used only by the execution simulator to prove fail-closed behaviour; detection and policy never read this file.",
+  "faults": [
+    {
+      "resource_id": "ctr-order-payments-01",
+      "fault": "image_digest_poisoned",
+      "applies_to": "restore",
+      "occurrences": -1,
+      "detail": "The simulated artefact mirror serves a tampered image for this workload, so post-restore validation must fail and the resource must stay quarantined."
+    }
+  ]
+}

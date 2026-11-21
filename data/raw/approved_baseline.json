@@ -1,0 +1,651 @@
+{
+  "schema_version": "1.0",
+  "baseline_id": "baseline-2026.11.18",
+  "version": 3,
+  "generated_at": "2026-11-18T07:30:00Z",
+  "as_of": "2026-11-18T12:00:00Z",
+  "resources": {
+    "vm-order-api-01": {
+      "resource_id": "vm-order-api-01",
+      "kind": "vm",
+      "service": "order-api",
+      "host": "vm-order-api-01.xyz.internal",
+      "approved_image": {
+        "reference": "registry.xyz.internal/order-api",
+        "tag": "2.4.1",
+        "digest": "sha256:7a3d55a437ace13683934f2a0ae34c2129c6792c9c3542d5ebe5a78913bf78ee"
+      },
+      "config_hash": "sha256:29573a3a28c76df5c442f6b17736652ee66c4e58fa8b35a7fc2c3bfb6581b004",
+      "approved_ports": [
+        {
+          "port": 8080,
+          "protocol": "tcp",
+          "purpose": "customer API (HTTPS)",
+          "exposure": "internal"
+        },
+        {
+          "port": 9090,
+          "protocol": "tcp",
+          "purpose": "metrics scrape",
+          "exposure": "management"
+        }
+      ],
+      "approved_processes": [
+        {
+          "name": "order-api",
+          "executable": "/opt/order-api/bin/order-api",
+          "user": "svc-order",
+          "sha256": "sha256:e364313b8782fb2775c3df30892e256b523f8e0f33719f188340452a5c674025"
+        },
+        {
+          "name": "node_exporter",
+          "executable": "/usr/local/bin/node_exporter",
+          "user": "node_exporter",
+          "sha256": "sha256:143a51a725e90bf9e404a1233939273d9f62c2a6d8c7b56fb4834e0bba80c7b2"
+        }
+      ],
+      "validation_rule_ids": [
+        "VAL-IMG-001",
+        "VAL-CFG-001",
+        "VAL-PORT-001",
+        "VAL-PROC-001",
+        "VAL-PROC-002",
+        "VAL-HLTH-001",
+        "VAL-PROBE-001"
+      ],
+      "owner": "order-platform@xyz.example",
+      "data_classification": "confidential"
+    },
+    "vm-order-api-02": {
+      "resource_id": "vm-order-api-02",
+      "kind": "vm",
+      "service": "order-api",
+      "host": "vm-order-api-02.xyz.internal",
+      "approved_image": {
+        "reference": "registry.xyz.internal/order-api",
+        "tag": "2.4.1",
+        "digest": "sha256:7a3d55a437ace13683934f2a0ae34c2129c6792c9c3542d5ebe5a78913bf78ee"
+      },
+      "config_hash": "sha256:29573a3a28c76df5c442f6b17736652ee66c4e58fa8b35a7fc2c3bfb6581b004",
+      "approved_ports": [
+        {
+          "port": 8080,
+          "protocol": "tcp",
+          "purpose": "customer API (HTTPS)",
+          "exposure": "internal"
+        },
+        {
+          "port": 9090,
+          "protocol": "tcp",
+          "purpose": "metrics scrape",
+          "exposure": "management"
+        }
+      ],
+      "approved_processes": [
+        {
+          "name": "order-api",
+          "executable": "/opt/order-api/bin/order-api",
+          "user": "svc-order",
+          "sha256": "sha256:e364313b8782fb2775c3df30892e256b523f8e0f33719f188340452a5c674025"
+        },
+        {
+          "name": "node_exporter",
+          "executable": "/usr/local/bin/node_exporter",
+          "user": "node_exporter",
+          "sha256": "sha256:143a51a725e90bf9e404a1233939273d9f62c2a6d8c7b56fb4834e0bba80c7b2"
+        }
+      ],
+      "validation_rule_ids": [
+        "VAL-IMG-001",
+        "VAL-CFG-001",
+        "VAL-PORT-001",
+        "VAL-PROC-001",
+        "VAL-PROC-002",
+        "VAL-HLTH-001",
+        "VAL-PROBE-001"
+      ],
+      "owner": "order-platform@xyz.example",
+      "data_classification": "confidential"
+    },
+    "vm-order-db-01": {
+      "resource_id": "vm-order-db-01",
+      "kind": "vm",
+      "service": "order-db",
+      "host": "vm-order-db-01.xyz.internal",
+      "approved_image": {
+        "reference": "registry.xyz.internal/order-db",
+        "tag": "16.3",
+        "digest": "sha256:0b995a42143236939e5b1672f4aa2f02c38caa6ab7008d3df988cf10f3d60131"
+      },
+      "config_hash": "sha256:3e100c1bdf5ade6b531795db7eb259310a5ce434331b44be7aa2deb20819c1e5",
+      "approved_ports": [
+        {
+          "port": 5432,
+          "protocol": "tcp",
+          "purpose": "postgres wire protocol",
+          "exposure": "internal"
+        },
+        {
+          "port": 9187,
+          "protocol": "tcp",
+          "purpose": "metrics scrape",
+          "exposure": "management"
+        }
+      ],
+      "approved_processes": [
+        {
+          "name": "postgres",
+          "executable": "/usr/lib/postgresql/16/bin/postgres",
+          "user": "postgres",
+          "sha256": "sha256:cf9244ecc12087a82b6a877e39810c231472eec0a8c7c7a6347ec00b26ca7753"
+        },
+        {
+          "name": "node_exporter",
+          "executable": "/usr/local/bin/node_exporter",
+          "user": "node_exporter",
+          "sha256": "sha256:143a51a725e90bf9e404a1233939273d9f62c2a6d8c7b56fb4834e0bba80c7b2"
+        }
+      ],
+      "validation_rule_ids": [
+        "VAL-IMG-001",
+        "VAL-CFG-001",
+        "VAL-PORT-001",
+        "VAL-PROC-001",
+        "VAL-PROC-002",
+        "VAL-HLTH-001",
+        "VAL-PROBE-001"
+      ],
+      "owner": "data-platform@xyz.example",
+      "data_classification": "restricted"
+    },
+    "vm-order-cache-01": {
+      "resource_id": "vm-order-cache-01",
+      "kind": "vm",
+      "service": "order-cache",
+      "host": "vm-order-cache-01.xyz.internal",
+      "approved_image": {
+        "reference": "registry.xyz.internal/order-cache",
+        "tag": "7.2.4",
+        "digest": "sha256:37d8717ed884bb89d43582e0b157d799dd124a42fc0104d0f846f0ada9ce1f5f"
+      },
+      "config_hash": "sha256:4bf4016779184678172caabd9ed43122773494467ec2544150baf29c15dafb2d",
+      "approved_ports": [
+        {
+          "port": 6379,
+          "protocol": "tcp",
+          "purpose": "redis protocol",
+          "exposure": "internal"
+        },
+        {
+          "port": 9100,
+          "protocol": "tcp",
+          "purpose": "metrics scrape",
+          "exposure": "management"
+        }
+      ],
+      "approved_processes": [
+        {
+          "name": "redis-server",
+          "executable": "/usr/bin/redis-server",
+          "user": "redis",
+          "sha256": "sha256:5dd9ac7d016452cb1b0b3f5d28a2c62270c7a3f64cac0bdd02b9222a098331a5"
+        },
+        {
+          "name": "node_exporter",
+          "executable": "/usr/local/bin/node_exporter",
+          "user": "node_exporter",
+          "sha256": "sha256:143a51a725e90bf9e404a1233939273d9f62c2a6d8c7b56fb4834e0bba80c7b2"
+        }
+      ],
+      "validation_rule_ids": [
+        "VAL-IMG-001",
+        "VAL-CFG-001",
+        "VAL-PORT-001",
+        "VAL-PROC-001",
+        "VAL-PROC-002",
+        "VAL-HLTH-001",
+        "VAL-PROBE-001"
+      ],
+      "owner": "order-platform@xyz.example",
+      "data_classification": "internal"
+    },
+    "ctr-order-gateway-01": {
+      "resource_id": "ctr-order-gateway-01",
+      "kind": "container",
+      "service": "order-gateway",
+      "host": "ctr-order-gateway-01.xyz.internal",
+      "approved_image": {
+        "reference": "registry.xyz.internal/order-gateway",
+        "tag": "1.9.2",
+        "digest": "sha256:fcda4f407b1c4aa7b43bb39da96bbccf59a0a16c31811b0922ae31995845cd57"
+      },
+      "config_hash": "sha256:328fd6db1e97254835c3dffadf54669789ad57e4c6ddc2b28e664dcbc427d517",
+      "approved_ports": [
+        {
+          "port": 8443,
+          "protocol": "tcp",
+          "purpose": "public HTTPS",
+          "exposure": "public"
+        },
+        {
+          "port": 8080,
+          "protocol": "tcp",
+          "purpose": "internal HTTP",
+          "exposure": "internal"
+        }
+      ],
+      "approved_processes": [
+        {
+          "name": "nginx",
+          "executable": "/usr/sbin/nginx",
+          "user": "nginx",
+          "sha256": "sha256:e5a45ad3c2cccbbc4a8f48b0d95b3b0e8e8047422777d8eb36e475b8ff5602b8"
+        },
+        {
+          "name": "tini",
+          "executable": "/sbin/tini",
+          "user": "root",
+          "sha256": "sha256:ec22d5c6686f27bc9e905458df7531bcf9c15cd4cb33c73d6156506e4bfb50b5"
+        }
+      ],
+      "validation_rule_ids": [
+        "VAL-IMG-001",
+        "VAL-CFG-001",
+        "VAL-PORT-001",
+        "VAL-PROC-001",
+        "VAL-PROC-002",
+        "VAL-HLTH-001",
+        "VAL-PROBE-001"
+      ],
+      "owner": "edge-platform@xyz.example",
+      "data_classification": "internal"
+    },
+    "ctr-order-payments-01": {
+      "resource_id": "ctr-order-payments-01",
+      "kind": "container",
+      "service": "order-payments",
+      "host": "ctr-order-payments-01.xyz.internal",
+      "approved_image": {
+        "reference": "registry.xyz.internal/order-payments",
+        "tag": "3.1.0",
+        "digest": "sha256:49c59d6e1d6a2b542fc10acb317e4d113fade5e2e358b24aaa5e1ca22366a4c9"
+      },
+      "config_hash": "sha256:d004fb6a048af8b9966aa0f094ce5edd9ec72c27209a74110608304cebe80f72",
+      "approved_ports": [
+        {
+          "port": 8443,
+          "protocol": "tcp",
+          "purpose": "payments API (HTTPS)",
+          "exposure": "internal"
+        },
+        {
+          "port": 9090,
+          "protocol": "tcp",
+          "purpose": "metrics scrape",
+          "exposure": "management"
+        }
+      ],
+      "approved_processes": [
+        {
+          "name": "payments",
+          "executable": "/opt/payments/bin/payments",
+          "user": "svc-payments",
+          "sha256": "sha256:c6738ceb0312c7d0ed20f89150d55e070f120547c2317d3468ecc06cafde5532"
+        },
+        {
+          "name": "tini",
+          "executable": "/sbin/tini",
+          "user": "root",
+          "sha256": "sha256:ec22d5c6686f27bc9e905458df7531bcf9c15cd4cb33c73d6156506e4bfb50b5"
+        }
+      ],
+      "validation_rule_ids": [
+        "VAL-IMG-001",
+        "VAL-CFG-001",
+        "VAL-PORT-001",
+        "VAL-PROC-001",
+        "VAL-PROC-002",
+        "VAL-HLTH-001",
+        "VAL-PROBE-001"
+      ],
+      "owner": "payments-platform@xyz.example",
+      "data_classification": "restricted"
+    },
+    "ctr-order-search-01": {
+      "resource_id": "ctr-order-search-01",
+      "kind": "container",
+      "service": "order-search",
+      "host": "ctr-order-search-01.xyz.internal",
+      "approved_image": {
+        "reference": "registry.xyz.internal/order-search",
+        "tag": "5.0.3",
+        "digest": "sha256:f07acde6e16845dcf717133d96948cfdec45a7e3ca55a26e75f9ec5a0a722b72"
+      },
+      "config_hash": "sha256:624fc22bff2b2607808a1bb03a6207cca9389860355b1cb5ce5e2798a7cfacda",
+      "approved_ports": [
+        {
+          "port": 9200,
+          "protocol": "tcp",
+          "purpose": "search API (HTTP)",
+          "exposure": "internal"
+        },
+        {
+          "port": 9090,
+          "protocol": "tcp",
+          "purpose": "metrics scrape",
+          "exposure": "management"
+        }
+      ],
+      "approved_processes": [
+        {
+          "name": "search",
+          "executable": "/opt/search/bin/search",
+          "user": "svc-search",
+          "sha256": "sha256:04383f7427b871161daea05142388b312594be739fa30f6f99dfa77f265cf240"
+        },
+        {
+          "name": "tini",
+          "executable": "/sbin/tini",
+          "user": "root",
+          "sha256": "sha256:ec22d5c6686f27bc9e905458df7531bcf9c15cd4cb33c73d6156506e4bfb50b5"
+        }
+      ],
+      "validation_rule_ids": [
+        "VAL-IMG-001",
+        "VAL-CFG-001",
+        "VAL-PORT-001",
+        "VAL-PROC-001",
+        "VAL-PROC-002",
+        "VAL-HLTH-001",
+        "VAL-PROBE-001"
+      ],
+      "owner": "search-platform@xyz.example",
+      "data_classification": "internal"
+    },
+    "ctr-order-worker-02": {
+      "resource_id": "ctr-order-worker-02",
+      "kind": "container",
+      "service": "order-worker",
+      "host": "ctr-order-worker-02.xyz.internal",
+      "approved_image": {
+        "reference": "registry.xyz.internal/order-worker",
+        "tag": "4.2.0",
+        "digest": "sha256:d57a06b9307473afc60a5747672f858a62e85ee0a7ac7e11f0168463c61b51cb"
+      },
+      "config_hash": "sha256:987200fda9ce36bbf351d55ea8ba19eff76e1933e3906b254446311dc597dee3",
+      "approved_ports": [
+        {
+          "port": 8081,
+          "protocol": "tcp",
+          "purpose": "worker admin API",
+          "exposure": "internal"
+        },
+        {
+          "port": 9090,
+          "protocol": "tcp",
+          "purpose": "metrics scrape",
+          "exposure": "management"
+        }
+      ],
+      "approved_processes": [
+        {
+          "name": "worker",
+          "executable": "/opt/worker/bin/worker",
+          "user": "svc-worker",
+          "sha256": "sha256:47aa9f40e6be58b0f61a1c6c1e295d53434202b29181a7cc082bfe26bb202b0e"
+        },
+        {
+          "name": "tini",
+          "executable": "/sbin/tini",
+          "user": "root",
+          "sha256": "sha256:ec22d5c6686f27bc9e905458df7531bcf9c15cd4cb33c73d6156506e4bfb50b5"
+        }
+      ],
+      "validation_rule_ids": [
+        "VAL-IMG-001",
+        "VAL-CFG-001",
+        "VAL-PORT-001",
+        "VAL-PROC-001",
+        "VAL-PROC-002",
+        "VAL-HLTH-001",
+        "VAL-PROBE-001"
+      ],
+      "owner": "order-platform@xyz.example",
+      "data_classification": "internal"
+    },
+    "ctr-order-reports-01": {
+      "resource_id": "ctr-order-reports-01",
+      "kind": "container",
+      "service": "order-reports",
+      "host": "ctr-order-reports-01.xyz.internal",
+      "approved_image": {
+        "reference": "registry.xyz.internal/order-reports",
+        "tag": "2.2.7",
+        "digest": "sha256:a508fce8702273cded0daea6be2d0ee37f96592ed44d0805a8e6a384c8111491"
+      },
+      "config_hash": "sha256:90a05ef6a623640bb4677f7aee5fc50878d79012e3adfa54ecf19a87ea663fde",
+      "approved_ports": [
+        {
+          "port": 8082,
+          "protocol": "tcp",
+          "purpose": "reports API",
+          "exposure": "internal"
+        },
+        {
+          "port": 9090,
+          "protocol": "tcp",
+          "purpose": "metrics scrape",
+          "exposure": "management"
+        }
+      ],
+      "approved_processes": [
+        {
+          "name": "reports",
+          "executable": "/opt/reports/bin/reports",
+          "user": "svc-reports",
+          "sha256": "sha256:6a659e13c1f082fde89678fba0a07023f752ead5eecbb76ce31a9772483fd784"
+        },
+        {
+          "name": "tini",
+          "executable": "/sbin/tini",
+          "user": "root",
+          "sha256": "sha256:ec22d5c6686f27bc9e905458df7531bcf9c15cd4cb33c73d6156506e4bfb50b5"
+        }
+      ],
+      "validation_rule_ids": [
+        "VAL-IMG-001",
+        "VAL-CFG-001",
+        "VAL-PORT-001",
+        "VAL-PROC-001",
+        "VAL-PROC-002",
+        "VAL-HLTH-001",
+        "VAL-PROBE-001"
+      ],
+      "owner": "analytics-platform@xyz.example",
+      "data_classification": "internal"
+    },
+    "ctr-order-notifications-01": {
+      "resource_id": "ctr-order-notifications-01",
+      "kind": "container",
+      "service": "order-notifications",
+      "host": "ctr-order-notifications-01.xyz.internal",
+      "approved_image": {
+        "reference": "registry.xyz.internal/order-notifications",
+        "tag": "1.4.6",
+        "digest": "sha256:d7a611c41600125d8039f8dc8ba16af6cc52564fecc58f3a0ee829a47949e673"
+      },
+      "config_hash": "sha256:578bcb08c6c889ae4f3bdeb0d06a77e74645d8a95947d5c7cc3ccb7b92d2b47e",
+      "approved_ports": [
+        {
+          "port": 8083,
+          "protocol": "tcp",
+          "purpose": "notifications API",
+          "exposure": "internal"
+        },
+        {
+          "port": 9090,
+          "protocol": "tcp",
+          "purpose": "metrics scrape",
+          "exposure": "management"
+        }
+      ],
+      "approved_processes": [
+        {
+          "name": "notifications",
+          "executable": "/opt/notifications/bin/notifications",
+          "user": "svc-notify",
+          "sha256": "sha256:c91270f7a0e760485581e7b4a5b415d4ac26e902ad841d729183a290fc8443f5"
+        },
+        {
+          "name": "tini",
+          "executable": "/sbin/tini",
+          "user": "root",
+          "sha256": "sha256:ec22d5c6686f27bc9e905458df7531bcf9c15cd4cb33c73d6156506e4bfb50b5"
+        }
+      ],
+      "validation_rule_ids": [
+        "VAL-IMG-001",
+        "VAL-CFG-001",
+        "VAL-PORT-001",
+        "VAL-PROC-001",
+        "VAL-PROC-002",
+        "VAL-HLTH-001",
+        "VAL-PROBE-001"
+      ],
+      "owner": "order-platform@xyz.example",
+      "data_classification": "internal"
+    }
+  },
+  "validation_rules": {
+    "VAL-IMG-001": {
+      "rule_id": "VAL-IMG-001",
+      "title": "Container/VM image digest matches approved baseline",
+      "description": "The running image digest and registry reference must equal the approved baseline. Tags are mutable and are never trusted as identity.",
+      "check": "image_digest",
+      "mandatory": true,
+      "severity": "critical",
+      "remediation_hint": "Restore the workload from the approved image digest.",
+      "params": {
+        "require_approved_reference": true
+      }
+    },
+    "VAL-CFG-001": {
+      "rule_id": "VAL-CFG-001",
+      "title": "Configuration hash matches approved baseline",
+      "description": "The runtime configuration hash must equal the approved baseline value.",
+      "check": "config_hash",
+      "mandatory": true,
+      "severity": "high",
+      "remediation_hint": "Reapply the baseline configuration and verify the hash.",
+      "params": {}
+    },
+    "VAL-PORT-001": {
+      "rule_id": "VAL-PORT-001",
+      "title": "No unapproved listening ports",
+      "description": "Every listening port must be explicitly approved for the resource.",
+      "check": "ports",
+      "mandatory": true,
+      "severity": "critical",
+      "remediation_hint": "Rebuild from baseline and confirm the port set.",
+      "params": {
+        "deny_unapproved": true
+      }
+    },
+    "VAL-PROC-001": {
+      "rule_id": "VAL-PROC-001",
+      "title": "No unapproved processes",
+      "description": "Every running process name must exist in the approved process list.",
+      "check": "processes",
+      "mandatory": true,
+      "severity": "high",
+      "remediation_hint": "Rebuild the workload and verify the process table.",
+      "params": {
+        "deny_unapproved": true
+      }
+    },
+    "VAL-PROC-002": {
+      "rule_id": "VAL-PROC-002",
+      "title": "Approved processes run from approved binaries",
+      "description": "Processes must not masquerade: executable paths and service users must match the baseline, and forbidden paths must never be used.",
+      "check": "processes",
+      "mandatory": true,
+      "severity": "critical",
+      "remediation_hint": "Treat as active compromise and rebuild from a trusted image.",
+      "params": {
+        "deny_unapproved": true,
+        "deny_masquerade": true,
+        "forbidden_prefixes": [
+          "/tmp/",
+          "/dev/shm/",
+          "/var/tmp/"
+        ]
+      }
+    },
+    "VAL-HLTH-001": {
+      "rule_id": "VAL-HLTH-001",
+      "title": "Health checks are passing",
+      "description": "The workload health endpoint must report passing with zero failures.",
+      "check": "health",
+      "mandatory": true,
+      "severity": "high",
+      "remediation_hint": "Investigate the service probe after baseline restoration.",
+      "params": {
+        "require_status": "passing",
+        "max_consecutive_failures": 0
+      }
+    },
+    "VAL-PROBE-001": {
+      "rule_id": "VAL-PROBE-001",
+      "title": "Service probe returns 200",
+      "description": "The simulated service probe must return HTTP 200 after restoration.",
+      "check": "service_probe",
+      "mandatory": true,
+      "severity": "high",
+      "remediation_hint": "Do not return to service; escalate to the service owner.",
+      "params": {
+        "path": "/healthz",
+        "expected_status": 200
+      }
+    }
+  },
+  "approved_changes": [
+    {
+      "change_id": "CHG-1042",
+      "resource_id": "ctr-order-reports-01",
+      "field": "config_hash",
+      "approved_value": "sha256:4688d5c39b872efd8a0c92d3952384ddc4161c86f4dd9010c94d4ce0db4663a4",
+      "approved_by": "change-advisory-board@xyz.example",
+      "approved_at": "2026-11-17T14:00:00Z",
+      "expires_at": "2026-11-25T14:00:00Z",
+      "ticket": "CHG-1042 reports rendering cache tuning"
+    }
+  ],
+  "policy": {
+    "health_failure_threshold": 3,
+    "stale_telemetry_minutes": 45,
+    "auto_remediate_severities": [
+      "critical"
+    ],
+    "max_restore_attempts": 2,
+    "require_approval_for_quarantine": false,
+    "allow_auto_return_to_service": true,
+    "forbidden_process_prefixes": [
+      "/tmp/",
+      "/dev/shm/",
+      "/var/tmp/"
+    ],
+    "privileged_users": [
+      "root",
+      "0"
+    ],
+    "high_risk_ports": [
+      4444,
+      1337,
+      31337,
+      5555,
+      6667,
+      4443,
+      9001
+    ]
+  }
+}
